@@ -7,10 +7,26 @@ import pandas as pd
 
 
 def load_label():
+    file = pd.read_csv('data/jump/annotations/Jump_label.csv', header=0)
     label_dict = {}
-    with open('./data/label.csv', 'r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            label_dict[row[0]] = int(row[1])
+    label_dict["version"] = "LongJump6.28"
+    label_dict["database"] = {}
+    for i in range(len(file)):
+        if file.iloc[i,1]!='None' and file.iloc[i,2]!='None':
+            label_dict['database'][str(file.iloc[i, 0])] = {}
+            label_dict['database'][str(file.iloc[i, 0])]["annotations"] = []
+            label_dict['database'][str(file.iloc[i, 0])]["annotations"].append({"label": "0", "label_id": 0, "segment": [int(file.iloc[i, 1]), int(file.iloc[i, 2])]})
+            label_dict['database'][str(file.iloc[i, 0])]['subset'] = "training"
+            label_dict['database'][str(file.iloc[i, 0])]['duration'] = int(file.iloc[i, 2])-int(file.iloc[i, 1])
+            label_dict['database'][str(file.iloc[i, 0])]['fps'] = 30
+
     return label_dict
-# def load_labe
+
+
+label_dict = load_label()
+for k,v in label_dict['database'].items():
+    print(k,v)
+    break
+with open('data/jump/annotations/Jump_label.json', 'w') as fid:
+    json.dump(label_dict, fid)
+

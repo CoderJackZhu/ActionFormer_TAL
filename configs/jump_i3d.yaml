@@ -2,14 +2,14 @@ dataset_name: jump
 train_split: ['training']
 val_split: ['validation']
 dataset: {
-  json_file: ./data/jump/annotations/.json,
+  json_file: ./data/jump/annotations/Jump_label.json,
     # TODO
-  feat_folder: ./data/jump/i3d_features,
+  feat_folder: ./data/jump/features,
   file_prefix: ~,
   file_ext: .npz,
   num_classes: 1,
   input_dim: 2048,
-  feat_stride: 16,
+  feat_stride: 4,
   num_frames: 16,
   default_fps: 30,
   trunc_thresh: 0.5,
