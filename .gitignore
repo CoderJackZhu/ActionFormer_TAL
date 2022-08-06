@@ -1,0 +1,8 @@
+/output/
+/video/
+.idea
+.vscode
+*.npz
+*.npy
+*.png
+*.jpg
