@@ -4,12 +4,12 @@ val_split: ['validation']
 dataset: {
   json_file: ./data/jump/annotations/Jump_label.json,
     # TODO
-  feat_folder: ./data/jump/features,
+  feat_folder: ./data/jump/i3d_features,
   file_prefix: ~,
   file_ext: .npz,
   num_classes: 1,
   input_dim: 2048,
-  feat_stride: 4,
+  feat_stride: 32,
   num_frames: 16,
   default_fps: 30,
   trunc_thresh: 0.5,

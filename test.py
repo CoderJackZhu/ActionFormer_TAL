@@ -20,6 +20,10 @@ import json
 
 file='data/jump/i3d_features/20220628001-rgb.npz'
 feature=np.load(file)
-print(feature['feature'])
+print(feature['feature'].shape)
 
+# with open('data/jump/annotations/Jump_label.json', 'r') as fid:
+#     json_data = json.load(fid)
+# json_db = json_data['database']
+# print(len(json_db))
 
