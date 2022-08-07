@@ -1,4 +1,4 @@
-from librs.datasets import make_dataset, make_data_loader
+from libs.datasets import make_dataset, make_data_loader
 import os
 
 train_dataset = make_dataset(

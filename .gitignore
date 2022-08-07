@@ -1,8 +1,10 @@
 /output/
 /video/
+/ckpt/
 .idea
 .vscode
 *.npz
 *.npy
 *.png
 *.jpg
+*.pth.tar

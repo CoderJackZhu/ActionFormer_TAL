@@ -8,7 +8,7 @@ dataset: {
   file_prefix: ~,
   file_ext: .npz,
   num_classes: 1,
-  input_dim: 2048,
+  input_dim: 1024,
   feat_stride: 32,
   num_frames: 16,
   default_fps: 30,
