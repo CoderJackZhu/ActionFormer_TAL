@@ -17,7 +17,7 @@
 Part of NMS is implemented in C++. The code can be compiled by
 
 ```shell
-cd ./libs/utils
+cd ./librs/utils
 python setup.py install --user
 cd ../..
 ```

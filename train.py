@@ -13,10 +13,10 @@ import torch.utils.data
 from torch.utils.tensorboard import SummaryWriter
 
 # our code
-from libs.core import load_config
-from libs.datasets import make_dataset, make_data_loader
-from libs.modeling import make_meta_arch
-from libs.utils import (train_one_epoch, valid_one_epoch, ANETdetection,
+from librs.core import load_config
+from librs.datasets import make_dataset, make_data_loader
+from librs.modeling import make_meta_arch
+from librs.utils import (train_one_epoch, valid_one_epoch, ANETdetection,
                         save_checkpoint, make_optimizer, make_scheduler,
                         fix_random_seed, ModelEma)
 

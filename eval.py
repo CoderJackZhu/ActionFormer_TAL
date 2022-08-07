@@ -12,10 +12,10 @@ import torch.backends.cudnn as cudnn
 import torch.utils.data
 
 # our code
-from libs.core import load_config
-from libs.datasets import make_dataset, make_data_loader
-from libs.modeling import make_meta_arch
-from libs.utils import valid_one_epoch, ANETdetection, fix_random_seed
+from librs.core import load_config
+from librs.datasets import make_dataset, make_data_loader
+from librs.modeling import make_meta_arch
+from librs.utils import valid_one_epoch, ANETdetection, fix_random_seed
 
 
 ################################################################################
