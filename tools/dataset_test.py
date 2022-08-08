@@ -2,7 +2,7 @@ from librs.datasets import make_dataset, make_data_loader
 import os
 
 train_dataset = make_dataset(
-    'jump', True, ['training'], json_file='./data/jump/annotations/Jump_label.json',
+    'jump', True, ['training'], json_file='../data/jump/annotations/Jump_label.json',
     feat_folder='./data/jump/i3d_features',
     file_prefix='',
     file_ext='.npz',

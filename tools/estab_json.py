@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def load_label():
-    file = pd.read_csv('data/jump/annotations/Jump_label.csv', header=0)
+    file = pd.read_csv('../data/jump/annotations/Jump_label.csv', header=0)
     label_dict = {}
     label_dict["version"] = "LongJump6.28"
     label_dict["database"] = {}
@@ -31,5 +31,5 @@ def load_label():
 label_dict = load_label()
 for k, v in label_dict['database'].items():
     print(k, v)
-with open('data/jump/annotations/Jump_label.json', 'w') as fid:
+with open('../data/jump/annotations/Jump_label.json', 'w') as fid:
     json.dump(label_dict, fid)

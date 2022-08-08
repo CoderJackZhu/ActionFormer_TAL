@@ -36,6 +36,6 @@ def process_video(root_dir='E:\Project\Long_jump', save_dir='E:\Project\Long_jum
 
 
 if __name__ == '__main__':
-    process_video(root_dir='./video', save_dir='./output')
+    process_video(root_dir='../video', save_dir='../output')
     # process_video(root_dir='E:\Project\Long_jump', save_dir='E:\Project\Long_jump_clip', resize_height=720,
     #                 resize_width=1280)
