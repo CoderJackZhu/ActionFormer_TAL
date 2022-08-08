@@ -18,12 +18,12 @@ This folder
 │   ...  
 │
 └───data/
-│    └───thumos/
+│    └───jump/
 │    │	 └───annotations
 │    │	 └───i3d_features   
 │    └───...
 |
-└───libs
+└───librs
 │
 │   ...
 ```
@@ -41,4 +41,3 @@ tensorboard --logdir=./ckpt/jump_i3d_reproduce/logs
 ```shell
 python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce
 ```
-* Training our model on THUMOS requires ~4.5GB GPU memory, yet the inference might require over 10GB GPU memory. We recommend using a GPU with at least 12 GB of memory.
