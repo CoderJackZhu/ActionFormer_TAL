@@ -2,8 +2,7 @@ dataset_name: jump
 train_split: ['training']
 val_split: ['validation']
 dataset: {
-  json_file: ./data/jump/annotations/Jump_label1.json,
-    # TODO
+  json_file: ./data/jump/annotations/Jump_label.json,
   feat_folder: ./data/jump/i3d_features,
   file_prefix: ~,
   file_ext: .npz,
@@ -29,7 +28,7 @@ model: {
 }
 opt: {
   learning_rate: 0.001,
-  epochs: 20,
+  epochs: 30,
   weight_decay: 0.05,
   "warmup_epochs": 10
 }
