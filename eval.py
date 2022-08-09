@@ -112,7 +112,7 @@ if __name__ == '__main__':
                         help='path to a checkpoint')
     parser.add_argument('-t', '--topk', default=-1, type=int,
                         help='max number of output actions (default: -1)')
-    parser.add_argument('--saveonly', action='store_true',
+    parser.add_argument('--saveonly', default=False, type=bool,
                         help='Only save the ouputs without evaluation (e.g., for test set)')
     parser.add_argument('-p', '--print-freq', default=10, type=int,
                         help='print frequency (default: 10 iterations)')

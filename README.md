@@ -38,6 +38,12 @@ python ./train.py ./configs/jump_i3d.yaml --output reproduce
 tensorboard --logdir=./ckpt/jump_i3d_reproduce/logs
 ```
 * Evaluate the trained model. The expected average mAP should be around 62.6(%) as in Table 1 of our main paper. **With recent commits, the expected average mAP should be higher than 66.0(%)**.
+
+仅查看结果指标运行：
 ```shell
-python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce
+python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce 
+```
+查看输出的结果（开始结束时间与标签和置信度）：
+```shell
+python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce --saveonly True
 ```
