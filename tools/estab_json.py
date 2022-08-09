@@ -16,7 +16,7 @@ def load_label():
             label_dict['database'][str(file.iloc[i, 0])] = {}
             label_dict['database'][str(file.iloc[i, 0])]["annotations"] = []
             label_dict['database'][str(file.iloc[i, 0])]["annotations"].append(
-                {"label": "0", "label_id": 0, "segment": [int(file.iloc[i, 1]), int(file.iloc[i, 2])]})
+                {"label": "0", "label_id": 0, "segment": [float(file.iloc[i, 1])/30.0, float(file.iloc[i, 2])/30.0]})
             random_num = np.random.rand(1)
             if random_num < 0.8:
                 label_dict['database'][str(file.iloc[i, 0])]['subset'] = "training"
@@ -31,5 +31,5 @@ def load_label():
 label_dict = load_label()
 for k, v in label_dict['database'].items():
     print(k, v)
-with open('../data/jump/annotations/Jump_label.json', 'w') as fid:
+with open('../data/jump/annotations/Jump_label1.json', 'w') as fid:
     json.dump(label_dict, fid)

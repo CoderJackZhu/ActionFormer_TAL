@@ -19,30 +19,30 @@ import pickle
 # feats=feature['feats']
 # print(feats.shape)
 
-# file= '../data/jump/i3d_features/20220628001-rgb.npz'
-# feature=np.load(file)
-# print(feature['feature'].shape)
+file= '/home/spgou/ZYJ/Long_jump/data/jump/i3d_features/20220628001-rgb.npz'
+feature=np.load(file)
+print(feature['feature'].shape)
 
 # with open('data/jump/annotations/Jump_label.json', 'r') as fid:
 #     json_data = json.load(fid)
 # json_db = json_data['database']
 # print(len(json_db))
-def read_pickle(work_path):
-    data_list = []
-    with open(work_path, "rb") as f:
-        while True:
-            try:
-                data = pickle.load(f)
-                data_list.append(data)
-            except EOFError:
-                break
-    return data_list
-
-
-def main():
-    pkl_path = 'feature_extract/tsn_jump_feature.pkl'
-    data_list = read_pickle(pkl_path)
-    print(len(data_list[0]))
-
-
-main()
+# def read_pickle(work_path):
+#     data_list = []
+#     with open(work_path, "rb") as f:
+#         while True:
+#             try:
+#                 data = pickle.load(f)
+#                 data_list.append(data)
+#             except EOFError:
+#                 break
+#     return data_list
+#
+#
+# def main():
+#     pkl_path = 'feature_extract/tsn_jump_feature.pkl'
+#     data_list = read_pickle(pkl_path)
+#     print(len(data_list[0]))
+#
+#
+# main()

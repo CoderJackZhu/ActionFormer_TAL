@@ -2,15 +2,15 @@ dataset_name: jump
 train_split: ['training']
 val_split: ['validation']
 dataset: {
-  json_file: ./data/jump/annotations/Jump_label.json,
+  json_file: ./data/jump/annotations/Jump_label1.json,
     # TODO
   feat_folder: ./data/jump/i3d_features,
   file_prefix: ~,
   file_ext: .npz,
   num_classes: 1,
   input_dim: 1024,
-  feat_stride: 32,
-  num_frames: 16,
+  feat_stride: 1,
+  num_frames: 1,
   default_fps: 30,
   trunc_thresh: 0.5,
   crop_ratio: [0.9, 1.0],
@@ -19,17 +19,17 @@ dataset: {
 model: {
   fpn_type: identity,
   max_buffer_len_factor: 1.0,
-  n_mha_win_size: [25, 25, 25, 25, 25, -1],
+    n_mha_win_size: [25, 25, 25, 25, 25, -1],
   # shrink the model for reduced input feature channels
   n_head: 4,
   embd_dim: 256,
   fpn_dim: 256,
   head_dim: 256,
-  use_abs_pe: True,
+  use_abs_pe: False,
 }
 opt: {
   learning_rate: 0.001,
-  epochs: 50,
+  epochs: 20,
   weight_decay: 0.05,
   "warmup_epochs": 10
 }
@@ -42,7 +42,7 @@ train_cfg: {
   cls_prior_prob: 0.01,
   center_sample: radius,
   center_sample_radius: 1.5,
-  label_smoothing: 0.3,
+  label_smoothing: 0.0,
 }
 
 
