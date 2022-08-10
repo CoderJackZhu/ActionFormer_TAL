@@ -9,3 +9,4 @@
 *.jpg
 *.pth.tar
 /ckpt/
+/logs/
