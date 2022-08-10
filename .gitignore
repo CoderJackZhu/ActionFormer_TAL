@@ -1,6 +1,6 @@
 /output/
 /video/
-!/models/ckpt/
+!/models/best_ckpt/
 .idea
 .vscode
 *.npz

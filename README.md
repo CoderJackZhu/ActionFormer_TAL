@@ -47,3 +47,8 @@ python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce
 ```shell
 python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce --saveonly True
 ```
+
+查看之前保存的最优结果：
+```shell
+python ./eval.py ./models/best_ckpt/jump_i3d_reproduce/best_jump_i3d.yaml ./models/best_ckpt/jump_i3d_reproduce 
+```

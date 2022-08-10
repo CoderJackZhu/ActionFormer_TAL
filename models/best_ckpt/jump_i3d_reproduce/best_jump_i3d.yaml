@@ -1,0 +1,59 @@
+dataset_name: jump
+train_split: ['training']
+val_split: ['validation']
+dataset: {
+  json_file: ./data/jump/annotations/Jump_label.json,
+  feat_folder: ./data/jump/i3d_features,
+  file_prefix: ~,
+  file_ext: .npz,
+  num_classes: 1,
+  input_dim: 1024,
+  feat_stride: 1,
+  num_frames: 1,
+  default_fps: 30,
+  trunc_thresh: 0.5,
+  crop_ratio: [0.9, 1.0],
+  max_seq_len: 768,
+}
+model: {
+  fpn_type: identity,
+  max_buffer_len_factor: 1.0,
+    n_mha_win_size: [25, 25, 25, 25, 25, -1],
+  # shrink the model for reduced input feature channels
+  n_head: 4,
+  embd_dim: 256,
+  fpn_dim: 256,
+  head_dim: 256,
+  use_abs_pe: False,
+}
+opt: {
+  learning_rate: 0.001,
+  epochs: 50,
+  weight_decay: 0.05,
+  "warmup_epochs": 10
+}
+loader: {
+  batch_size: 16,
+}
+train_cfg: {
+  init_loss_norm: 400,
+  clip_grad_l2norm: 1.0,
+  cls_prior_prob: 0.01,
+  center_sample: radius,
+  center_sample_radius: 1.5,
+  label_smoothing: 0.0,
+}
+
+
+test_cfg: {
+  voting_thresh: 0.9,
+  pre_nms_topk: 2000,
+  # max of 100 predictions per video
+  max_seg_num: 100,
+  min_score: 0.001,
+  # score fusion
+  multiclass_nms: True,
+  nms_sigma : 0.75,
+  duration_thresh: 0.1,
+}
+output_folder: ./ckpt/
