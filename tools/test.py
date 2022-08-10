@@ -43,7 +43,7 @@ def read_pickle(work_path):
 
 
 def main():
-    pkl_path = '../ckpt/jump_i3d_reproduce/eval_results.pkl'
+    pkl_path = '../models/ckpt/jump_i3d_reproduce/eval_results.pkl'
     data_list = read_pickle(pkl_path)
     data_list=data_list[0]
     for k,v in data_list.items():

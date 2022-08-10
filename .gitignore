@@ -1,6 +1,6 @@
 /output/
 /video/
-/ckpt/
+!/models/ckpt/
 .idea
 .vscode
 *.npz
@@ -8,3 +8,4 @@
 *.png
 *.jpg
 *.pth.tar
+/ckpt/
