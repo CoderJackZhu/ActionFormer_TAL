@@ -1,6 +1,6 @@
 dataset_name: jump
 train_split: ['training']
-val_split: ['validation']
+val_split: ['training', 'validation']
 dataset: {
   json_file: ./data/jump/annotations/Jump_label.json,
   feat_folder: ./data/jump/i3d_features,

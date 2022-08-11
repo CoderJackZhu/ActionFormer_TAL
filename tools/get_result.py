@@ -16,7 +16,7 @@ def read_pickle(work_path):
     return data_list
 
 
-def main(pkl_path='../models/ckpt1/jump_i3d_reproduce/eval_results.pkl'):
+def main(pkl_path='../models/ckpt1/jump_i3d_reproduce/eval_results.pkl',fps=30.0):
     data_list = read_pickle(pkl_path)
     data_list = data_list[0]
     video_id = data_list['video-id']
@@ -37,8 +37,8 @@ def main(pkl_path='../models/ckpt1/jump_i3d_reproduce/eval_results.pkl'):
     save_path = os.path.join(os.path.dirname(pkl_path), 'jump_result.txt')
     with open(save_path, "w") as f:
         for i in range(len(result_list)):
-            f.write(result_list[i][0] + ' ' + str(result_list[i][1]) + ' ' + str(result_list[i][2]) + '\n')
+            f.write(result_list[i][0] + ' ' + str(round(result_list[i][1]*fps)) + ' ' + str(round(result_list[i][2]*fps)) + '\n')
 
 
 if __name__ == '__main__':
-    main(pkl_path='../models/best_ckpt/jump_i3d_reproduce/eval_results.pkl')
+    main(pkl_path='../models/ckpt1/jump_i3d_reproduce/eval_results.pkl',fps=30.0)
