@@ -29,7 +29,6 @@ import pickle
 # print(len(json_db))
 
 
-
 def read_pickle(work_path):
     data_list = []
     with open(work_path, "rb") as f:
@@ -42,13 +41,4 @@ def read_pickle(work_path):
     return data_list
 
 
-def main():
-    pkl_path = '../models/ckpt/jump_i3d_reproduce/eval_results.pkl'
-    data_list = read_pickle(pkl_path)
-    data_list=data_list[0]
-    for k,v in data_list.items():
-        print(k,v)
 
-
-
-main()

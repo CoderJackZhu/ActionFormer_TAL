@@ -3,7 +3,7 @@ import os
 
 train_dataset = make_dataset(
     'jump', True, ['training'], json_file='../data/jump/annotations/Jump_label.json',
-    feat_folder='./data/jump/i3d_features',
+    feat_folder='../data/jump/i3d_features',
     file_prefix='',
     file_ext='.npz',
     num_classes=1,
@@ -20,3 +20,23 @@ train_dataset = make_dataset(
 print(len(train_dataset))
 train_db_vars = train_dataset.get_attributes()
 print(train_db_vars)
+
+val_dataset = make_dataset(
+    'jump', False, ['validation'], json_file='../data/jump/annotations/Jump_label.json',
+    feat_folder='../data/jump/i3d_features',
+    file_prefix='',
+    file_ext='.npz',
+    num_classes=1,
+    input_dim=2048,
+    feat_stride=32,
+    num_frames=16,
+    default_fps=30,
+    trunc_thresh=0.5,
+    crop_ratio=[0.9, 1.0],
+    max_seq_len=768,
+    downsample_rate=1,
+    force_upsampling=True)
+
+
+for i in range(len(val_dataset)):
+    print(val_dataset[i]['video_id'])
