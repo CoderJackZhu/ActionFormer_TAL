@@ -10,3 +10,4 @@
 *.pth.tar
 /ckpt/
 /logs/
+*.pt

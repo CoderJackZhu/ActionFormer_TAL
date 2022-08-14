@@ -7,6 +7,21 @@ This code repo implements ActionFormer, one of the first Transformer-based model
 
 # Reproduce the results on Dataset
 
+## 1.Prepare the features
+`feature-extraction_i3d` contain basic tools for feature extraction. Fisrst, you should download the model and the pretrained weights and put it in `feature-extraction_models`. Then, you can use the `extract_features.py` to extract the features.
+
+```shell
+python ./feature-extraction_i3d/extract_features.py \
+    --mode rgb
+    --load_model feature-extraction_i3d/models/rgb_imagenet.pt
+    --input_dir  input 
+    --output_dir  data/jump/i3d_features
+    --batch_size  40
+    --sample_mode resize
+    --frequency 1
+    
+```
+
 **Details**: The features are extracted from two-stream I3D models pretrained on Kinetics using clips of `16 frames` at the video frame rate (`~30 fps`) and a stride of `4 frames`. This gives one feature vector per `4/30 ~= 0.1333` seconds.
 
 **Unpack Features and Annotations**
@@ -28,7 +43,7 @@ This folder
 │   ...
 ```
 
-**Training and Evaluation**
+## Training and Evaluation
 * Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
 ```shell
 python ./train.py ./configs/jump_i3d.yaml --output reproduce

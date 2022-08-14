@@ -19,7 +19,7 @@ import pickle
 # feats=feature['feats']
 # print(feats.shape)
 
-# file= '../feature_extract/20220628001-rgb.npz'
+# file= '../feature_extract__mmaction2/20220628001-rgb.npz'
 # feature=np.load(file)
 # print(feature['feature'].shape)
 
