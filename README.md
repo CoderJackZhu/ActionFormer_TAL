@@ -43,7 +43,7 @@ This folder
 │   ...
 ```
 
-## Training and Evaluation
+## 2.Training and Evaluation
 * Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
 ```shell
 python ./train.py ./configs/jump_i3d.yaml --output reproduce
@@ -66,4 +66,11 @@ python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce --saveonly Tr
 View previously saved best results:
 ```shell
 python ./eval.py ./models/best_ckpt/jump_i3d_reproduce/best2_jump_i3d.yaml ./models/best_ckpt/jump_i3d_reproduce 
+```
+
+## 3.Sit and reach Dataset
+prepare features
+
+```shell
+python ./feature-extraction_i3d/extract_features.py --mode rgb --load_model ./feature-extraction_i3d/models/rgb_imagenet.pt --input_dir  E:\Project\Sit_and_reach_clip  --output_dir  data/sit/i3d_features  --batch_size  40 --sample_mode resize --frequency 1
 ```

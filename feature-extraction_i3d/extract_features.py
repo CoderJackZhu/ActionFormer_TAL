@@ -319,7 +319,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', type=str, default='rgb')
-    parser.add_argument('--load_model', type=str, default='models/rgb_imagenet.pt')
+    parser.add_argument('--load_model', type=str, default='./feature-extraction_i3d/models/rgb_imagenet.pt')
     parser.add_argument('--input_dir', type=str, default='input')
     parser.add_argument('--output_dir', type=str, default='output')
     parser.add_argument('--batch_size', type=int, default=40)

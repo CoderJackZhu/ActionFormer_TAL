@@ -11,9 +11,11 @@ def process_video(root_dir='../video', save_dir='../test'):
         dst_path= os.path.join(save_dir, video_filename)
         if not os.path.exists(dst_path):
             os.mkdir(dst_path)
-        cmd = 'ffmpeg -i \"{}\" -r 1 -q:v 2 -f image2 \"{}/%03d.jpg\"'.format(video, dst_path)
+        cmd = 'ffmpeg -i {} -r 30 -q:v 2 -f image2 {}/%03d.jpg"'.format(video, dst_path)
         subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         print('{} has finished'.format(video_filename))
 
-process_video()
+
+if __name__ == '__main__':
+    process_video()
