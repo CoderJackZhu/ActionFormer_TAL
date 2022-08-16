@@ -304,6 +304,7 @@ def run(mode='rgb', load_model='', sample_mode='oversample', frequency=16,
         full_features = [np.concatenate(i, axis=0) for i in full_features]
         full_features = [np.expand_dims(i, axis=0) for i in full_features]
         full_features = np.concatenate(full_features, axis=0)
+        full_features = np.squeeze(full_features)
 
         np.savez(os.path.join(output_dir, save_file), 
             feature=full_features,
