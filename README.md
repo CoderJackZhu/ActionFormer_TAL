@@ -72,5 +72,31 @@ python ./eval.py ./models/best_ckpt/jump_i3d_reproduce/best2_jump_i3d.yaml ./mod
 prepare features
 
 ```shell
-python ./feature-extraction_i3d/extract_features.py --mode rgb --load_model ./feature-extraction_i3d/models/rgb_imagenet.pt --input_dir  E:\Project\Sit_and_reach_clip  --output_dir  data/sit/i3d_features  --batch_size  40 --sample_mode resize --frequency 1
+python ./feature-extraction_i3d/extract_features.py --mode rgb --load_model ./feature-extraction_i3d/models/rgb_imagenet.pt  --input_dir  /media/spgou/新加卷/ZYJ_Dataset/Sit_and_reach_clip   --output_dir  data/sit/i3d_features  --batch_size  120  --sample_mode resize --frequency 1
+```
+
+
+## 2.Training and Evaluation
+* Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
+```shell
+python ./train.py ./configs/jump_i3d.yaml --output reproduce
+```
+* [Optional] Monitor the training using TensorBoard
+```shell
+tensorboard --logdir=./ckpt/jump_i3d_reproduce/logs
+```
+* Evaluate the trained model. The expected average mAP should be around 62.6(%) as in Table 1 of our main paper. **With recent commits, the expected average mAP should be higher than 66.0(%)**.
+
+Only view result metrics run：
+```shell
+python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce 
+```
+View the output results (start and end times with labels and confidence):
+```shell
+python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce --saveonly True
+```
+
+View previously saved best results:
+```shell
+python ./eval.py ./models/best_ckpt/jump_i3d_reproduce/best2_jump_i3d.yaml ./models/best_ckpt/jump_i3d_reproduce 
 ```
