@@ -7,7 +7,7 @@ This code repo implements ActionFormer, one of the first Transformer-based model
 
 # Reproduce the results on Dataset
 
-## 1.Prepare the features
+## 1.Prepare the features of Jump
 `feature-extraction_i3d` contain basic tools for feature extraction. Fisrst, you should download the model and the pretrained weights and put it in `feature-extraction_models`. Then, you can use the `extract_features.py` to extract the features.
 
 ```shell
@@ -21,7 +21,7 @@ python ./feature-extraction_i3d/extract_features.py \
     --frequency 1
     
 ```
-
+weight file can be downloaded from [original site](https://github.com/Finspire13/pytorch-i3d-feature-extraction/tree/master/models).
 **Details**: The features are extracted from two-stream I3D models pretrained on Kinetics using clips of `16 frames` at the video frame rate (`~30 fps`) and a stride of `4 frames`. This gives one feature vector per `4/30 ~= 0.1333` seconds.
 
 **Unpack Features and Annotations**
@@ -43,7 +43,7 @@ This folder
 │   ...
 ```
 
-## 2.Training and Evaluation
+## 2.Training and Evaluation on Jump Dataset
 * Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
 ```shell
 python ./train.py ./configs/jump_i3d.yaml --output reproduce
@@ -68,15 +68,14 @@ View previously saved best results:
 python ./eval.py ./models/best_ckpt/jump_i3d_reproduce/best2_jump_i3d.yaml ./models/best_ckpt/jump_i3d_reproduce 
 ```
 
-## 3.Sit and reach Dataset
-prepare features
+## 3.Prepare the features of Sit and Reach
 
 ```shell
 python ./feature-extraction_i3d/extract_features.py --mode rgb --load_model ./feature-extraction_i3d/models/rgb_imagenet.pt  --input_dir  /media/spgou/新加卷/ZYJ_Dataset/Sit_and_reach_clip   --output_dir  data/sit/i3d_features  --batch_size  120  --sample_mode resize --frequency 1
 ```
 
 
-## 2.Training and Evaluation
+## 4.Training and Evaluation on Sit and Reach Dataset
 * Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
 ```shell
 python ./train.py ./configs/sit_i3d.yaml --output reproduce
