@@ -3,13 +3,13 @@ import json
 import pickle
 
 
-# file1='./data/v___c8enCfzqw.npy'
+file1='F:/Code/PE project/video_features/output/r21d/r2plus1d_18_16_kinetics/20220628005_r21d.npy'
 # file2='./data/video_test_0000004.npy'
 # file2_1='./data/video_test_0000006.npy'
 # file3='./data/P01_01.npz'
 
-# tsp_feature=np.load(file1)
-# print(tsp_feature.shape)
+tsp_feature=np.load(file1)
+print(tsp_feature.shape)
 # i3d_feature=np.load(file2)
 # print(i3d_feature.shape)
 # i3d_feature_1=np.load(file2_1)
@@ -29,16 +29,16 @@ import pickle
 # print(len(json_db))
 
 
-def read_pickle(work_path):
-    data_list = []
-    with open(work_path, "rb") as f:
-        while True:
-            try:
-                data = pickle.load(f)
-                data_list.append(data)
-            except EOFError:
-                break
-    return data_list
+# def read_pickle(work_path):
+#     data_list = []
+#     with open(work_path, "rb") as f:
+#         while True:
+#             try:
+#                 data = pickle.load(f)
+#                 data_list.append(data)
+#             except EOFError:
+#                 break
+#     return data_list
 
 
 
