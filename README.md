@@ -56,7 +56,7 @@ tensorboard --logdir=./ckpt/jump_i3d_reproduce/logs
 
 Only view result metrics run：
 ```shell
-python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce 
+python ./eval.py ./configs/sit.yaml ./ckpt/jump_i3d_reproduce 
 ```
 View the output results (start and end times with labels and confidence):
 ```shell
@@ -78,7 +78,7 @@ python ./feature-extraction_i3d/extract_features.py --mode rgb --load_model ./fe
 ## 4.Training and Evaluation on Sit and Reach Dataset
 * Train our ActionFormer with I3D features. This will create an experiment folder under *./ckpt* that stores training config, logs, and checkpoints.
 ```shell
-python ./train.py ./configs/sit_i3d.yaml --output reproduce
+python ./train.py ./configs/sit.yaml --output reproduce
 ```
 * [Optional] Monitor the training using TensorBoard
 ```shell
@@ -88,11 +88,11 @@ tensorboard --logdir=./ckpt/sit_i3d_reproduce/logs
 
 Only view result metrics run：
 ```shell
-python ./eval.py ./configs/sit_i3d.yaml ./ckpt/sit_i3d_reproduce 
+python ./eval.py ./configs/sit.yaml ./ckpt/sit_i3d_reproduce 
 ```
 View the output results (start and end times with labels and confidence):
 ```shell
-python ./eval.py ./configs/sit_i3d.yaml ./ckpt/sit_i3d_reproduce --saveonly True
+python ./eval.py ./configs/sit.yaml ./ckpt/sit_i3d_reproduce --saveonly True
 ```
 
 View previously saved best results:

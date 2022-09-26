@@ -154,8 +154,8 @@ class JumpDataset(Dataset):
                 )
         else:
             filename = os.path.join(self.feat_folder,
-                                    self.file_prefix + video_item['id'] + '-rgb' + self.file_ext)
-            feats = np.load(filename)['feature'].astype(np.float32)
+                                    self.file_prefix + video_item['id'] + '_r21d' + self.file_ext)
+            feats = np.load(filename).astype(np.float32)
 
         # we support both fixed length features / variable length features
         if self.feat_stride > 0:
