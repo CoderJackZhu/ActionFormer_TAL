@@ -1,13 +1,13 @@
 dataset_name: sit
 train_split: ['training']
-val_split: ['validation']
+val_split: ['validation', 'training']
 dataset: {
   json_file: ./data/sit/annotations/Sit_label.json,
-  feat_folder: ./data/sit/i3d_features,
+  feat_folder: ./data/sit/r21d_features,
   file_prefix: ~,
   file_ext: .npy,
   num_classes: 1,
-  input_dim: 1024,
+  input_dim: 512,
   feat_stride: 1,
   num_frames: 1,
   default_fps: 30,

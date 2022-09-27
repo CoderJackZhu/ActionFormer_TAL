@@ -88,11 +88,11 @@ tensorboard --logdir=./ckpt/sit_i3d_reproduce/logs
 
 Only view result metrics run：
 ```shell
-python ./eval.py ./configs/sit.yaml ./ckpt/sit_i3d_reproduce 
+python ./eval.py ./configs/sit.yaml ./ckpt/sit_reproduce 
 ```
 View the output results (start and end times with labels and confidence):
 ```shell
-python ./eval.py ./configs/sit.yaml ./ckpt/sit_i3d_reproduce --saveonly True
+python ./eval.py ./configs/sit.yaml ./ckpt/sit_reproduce --saveonly True
 ```
 
 View previously saved best results:
