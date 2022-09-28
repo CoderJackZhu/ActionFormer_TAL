@@ -44,8 +44,8 @@ def analyse_frame(data_path='../ckpt/sit_reproduce/eval_results.pkl'):
     frame_abs_error_list, frame_rel_error_list = [], []
     for i in range(file.shape[0]):
         print(data.iloc[i,1], file.iloc[i,3])
-        frame_abs_error = int(data.iloc[i, 1]) - int(file.iloc[i, 3])
-        frame_rel_error = frame_abs_error / float(file.iloc[i, 3])
+        frame_abs_error = round(data.iloc[i, 1]) - file.iloc[i, 3]
+        frame_rel_error = frame_abs_error / file.iloc[i, 3]
         frame_abs_error_list.append(frame_abs_error)
         frame_rel_error_list.append(frame_rel_error)
 

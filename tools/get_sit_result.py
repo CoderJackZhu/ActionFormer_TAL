@@ -16,7 +16,7 @@ def read_pickle(work_path):
 
 
 def main(pkl_path='../models/sit_best_ckpt/sit_i3d_reproduce/eval_results.pkl',fps=30.0):
-
+    data_list = read_pickle(pkl_path)
     data_list = data_list[0]
     video_id = data_list['video-id']
     t_end = data_list['t-end']

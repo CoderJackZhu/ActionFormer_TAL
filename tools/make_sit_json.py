@@ -23,8 +23,8 @@ def load_label():
                 label_dict['database'][str(file.iloc[i, 0])]['subset'] = "training"
             else:
                 label_dict['database'][str(file.iloc[i, 0])]['subset'] = "validation"
-            label_dict['database'][str(file.iloc[i, 0])]['duration'] = (int(file.iloc[i, 3]))/fps
-            label_dict['database'][str(file.iloc[i, 0])]['fps'] = 30
+            label_dict['database'][str(file.iloc[i, 0])]['duration'] = (float(file.iloc[i, 7]))/fps
+            label_dict['database'][str(file.iloc[i, 0])]['fps'] = 30.0
 
     return label_dict
 

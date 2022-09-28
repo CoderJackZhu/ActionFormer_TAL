@@ -1,6 +1,6 @@
 dataset_name: sit
 train_split: ['training']
-val_split: ['validation', 'training']
+val_split: ['training']
 dataset: {
   json_file: ./data/sit/annotations/Sit_label.json,
   feat_folder: ./data/sit/r21d_features,
@@ -9,7 +9,7 @@ dataset: {
   num_classes: 1,
   input_dim: 512,
   feat_stride: 1,
-  num_frames: 1,
+  num_frames: 16,
   default_fps: 30,
   trunc_thresh: 0.5,
   crop_ratio: [0.9, 1.0],
