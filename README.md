@@ -82,9 +82,8 @@ python ./train.py ./configs/sit.yaml --output reproduce
 ```
 * [Optional] Monitor the training using TensorBoard
 ```shell
-tensorboard --logdir=./ckpt/sit_i3d_reproduce/logs
+tensorboard --logdir=./ckpt/sit_reproduce/logs
 ```
-* Evaluate the trained model. The expected average mAP should be around 62.6(%) as in Table 1 of our main paper. **With recent commits, the expected average mAP should be higher than 66.0(%)**.
 
 Only view result metrics run：
 ```shell
@@ -95,27 +94,3 @@ View the output results (start and end times with labels and confidence):
 python ./eval.py ./configs/sit.yaml ./ckpt/sit_reproduce --saveonly True
 ```
 
-View previously saved best results:
-```shell
-python ./eval.py ./models/best_ckpt/sit_i3d_reproduce/best2_sit_i3d.yaml ./models/best_ckpt/sit_i3d_reproduce 
-```
-
-
-```shell
-python ./train.py ./configs/jump_r21d.yaml --output reproduce
-```
-
-```shell
-tensorboard --logdir=./ckpt/jump_r21d_reproduce/logs
-```
-
-* Evaluate the trained model. The expected average mAP should be around 62.6(%) as in Table 1 of our main paper. **With recent commits, the expected average mAP should be higher than 66.0(%)**.
-
-Only view result metrics run：
-```shell
-python ./eval.py ./configs/jump_r21d.yaml ./ckpt/jump_r21d_reproduce 
-```
-View the output results (start and end times with labels and confidence):
-```shell
-python ./eval.py ./configs/jump_i3d.yaml ./ckpt/jump_i3d_reproduce --saveonly True
-```

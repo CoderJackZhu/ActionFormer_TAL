@@ -1,6 +1,6 @@
 dataset_name: sit
 train_split: ['training']
-val_split: ['training']
+val_split: ['validation']
 dataset: {
   json_file: ./data/sit/annotations/Sit_label.json,
   feat_folder: ./data/sit/r21d_features,
@@ -28,7 +28,7 @@ model: {
 }
 opt: {
   learning_rate: 0.001,
-  epochs: 50,
+  epochs: 160,
   weight_decay: 0.05,
   "warmup_epochs": 10
 }
